@@ -6,7 +6,8 @@ import RegisterForm from './components/hookform'
 function App() {
   return (
     <div className="App">
-      <RegisterForm />
+      Registration Form
+      <RegisterForm></RegisterForm>
     </div>
   );
 }

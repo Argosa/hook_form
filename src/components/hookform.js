@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
+
 const RegisterForm = props => {
-    const [ formState, setFormState ] = useState({ // crate form inputs for form
+    const [ valueState, setValueState ] = useState({ // create form inputs for form
         firstName: "",
         lastName: "",
         email: "",
@@ -10,15 +11,14 @@ const RegisterForm = props => {
     })
 
     const onChangeHandler = event => {
-        setFormState({
-            ...formState,
+        setValueState({
+            ...valueState,
             [event.target.name]: event.target.value
         });
     }
 
     const onSubmitHandler = event => {
         event.preventDefault();
-        console.log(formState);
     }
 
     return(
@@ -41,6 +41,13 @@ const RegisterForm = props => {
                 <br/>
                 <input type="submit" />
             </form>
+            <div>
+                <p><b>First Name:</b> {valueState.firstName}</p>
+                <p><b>Last Name:</b> {valueState.lastName}</p>
+                <p><b>Email:</b> {valueState.email}</p>
+                <p><b>Password:</b> {valueState.password}</p>
+                <p><b>Confirm Password:</b> {valueState.confirm}</p>
+            </div>
         </div>
     );
 }
